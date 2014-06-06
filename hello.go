@@ -37,12 +37,16 @@ func root(w http.ResponseWriter, r *http.Request) {
         // consistent. If we omitted the .Ancestor from this query there would be
         // a slight chance that Greeting that had just been written would not
         // show up in a query.
+        // [START query]
         q := datastore.NewQuery("Greeting").Ancestor(guestbookKey(c)).Order("-Date").Limit(10)
+        // [END query]
+        // [START getall]
         greetings := make([]Greeting, 0, 10)
         if _, err := q.GetAll(c, &greetings); err != nil {
                 http.Error(w, err.Error(), http.StatusInternalServerError)
                 return
         }
+        // [END getall]
         if err := guestbookTemplate.Execute(w, greetings); err != nil {
                 http.Error(w, err.Error(), http.StatusInternalServerError)
         }
