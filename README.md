@@ -16,8 +16,6 @@ High Replication Datastore (HRD) and retrieved using a strongly consistent
 - [NDB Datastore API][3]
 - [Users API][4]
 
-## Dependencies
-TBD
 
 [1]: https://developers.google.com/appengine
 [2]: https://golang.org
