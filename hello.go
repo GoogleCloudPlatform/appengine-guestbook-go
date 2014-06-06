@@ -13,8 +13,10 @@ func init() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    // [START get_current_user]
+    // [START new_context]
     c := appengine.NewContext(r)
+    // [END new_context]
+    // [START get_current_user]
     u := user.Current(c)
     // [END get_current_user]
     // [START if_user]
