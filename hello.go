@@ -77,11 +77,14 @@ var guestbookTemplate = template.Must(template.New("book").Parse(`
 
 // [START func_sign]
 func sign(w http.ResponseWriter, r *http.Request) {
+        // [START new_context]
         c := appengine.NewContext(r)
+        // [END new_context]        
         g := Greeting{
                 Content: r.FormValue("content"),
                 Date:    time.Now(),
         }
+        // [START if_user]
         if u := user.Current(c); u != nil {
                 g.Author = u.String()
         }
@@ -96,5 +99,6 @@ func sign(w http.ResponseWriter, r *http.Request) {
                 return
         }
         http.Redirect(w, r, "/", http.StatusFound)
+        // [END if_user]
 }
 // [END func_sign]
