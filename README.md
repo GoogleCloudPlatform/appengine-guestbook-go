@@ -1,3 +1,9 @@
+![status: inactive](https://img.shields.io/badge/status-inactive-red.svg)
+
+This project is no longer actively developed or maintained.
+
+For new work on this check out [Building an App Engine application with Go](https://cloud.google.com/appengine/docs/standard/go/building-app/) and [App Engine hello world for Go](https://github.com/GoogleCloudPlatform/golang-samples/tree/master/appengine/helloworld).
+
 # Guestbook
 
 Guestbook is an example application showing basic usage of Google App
